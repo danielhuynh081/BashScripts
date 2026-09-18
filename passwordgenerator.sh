@@ -7,7 +7,7 @@
 RANDOM=$$$(date +%s)
 
 # Define the length of the password
-LENGTH=8
+LENGTH=12
 
 # Define the characters that can be used in the password
 CHARACTERS="!@#$%^&*()_-+={}[]|:;'<>,.?/abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
