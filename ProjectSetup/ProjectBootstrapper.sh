@@ -40,10 +40,55 @@ EOF
 
 #include <iostream>
 
-using namespace std;
 
 #endif
 EOF
+
+    # Create CMake configuration
+    cat <<EOF > CMakeLists.txt
+cmake_minimum_required(VERSION 3.16)
+
+project($PROJECT_NAME)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_executable($PROJECT_NAME
+    src/$PROJECT_NAME.cpp
+)
+
+target_include_directories($PROJECT_NAME PRIVATE include)
+EOF
+
+    # Create gitignore
+    cat <<EOF > .gitignore
+# Build files
+build/
+cmake-build-*/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
+EOF
+
+    # Initialize Git
+    git init
+
+    echo ""
+    echo "C++ project '$PROJECT_NAME' created successfully."
+    echo ""
+    echo "Build with:"
+    echo "  mkdir build"
+    echo "  cd build"
+    echo "  cmake .."
+    echo "  cmake --build ."
 }
 
 setup_vite() {

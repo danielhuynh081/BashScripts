@@ -1,0 +1,1 @@
+# This script uses LLMs to see what you've built since your last commit and helps you write a nice commit message. It will also check if your commit message is good enough and if not, it will suggest a better one.
